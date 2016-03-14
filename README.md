@@ -87,3 +87,4 @@ This project is licensed under the Apache License - see the [LICENSE.md](LICENSE
 * Hat tip to anyone who's code was used
 * Inspiration
 * etc
+* [spring-boot-samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples)
