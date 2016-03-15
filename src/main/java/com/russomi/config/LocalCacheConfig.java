@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Profile;
 
 @Configuration
 @EnableCaching
-@Profile({"default"})
-public class DefaultCacheConfig {
+@Profile({"default","local"})
+public class LocalCacheConfig {
 
     @Bean
     public CacheManager concurrentMapCacheManager() {
-        return new ConcurrentMapCacheManager("default");
+        return new ConcurrentMapCacheManager("defaultCache");
     }
 }

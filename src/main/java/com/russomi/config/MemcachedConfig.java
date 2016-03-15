@@ -27,7 +27,7 @@ import java.util.Set;
 @EnableCaching
 @Configuration
 public class MemcachedConfig extends CachingConfigurerSupport {
-    private static final String SERVER = System.getenv("CACHE_SERVERS");
+    private static final String CACHE_SERVERS = System.getenv("CACHE_SERVERS");
 
     @Autowired
     private Environment environment;
@@ -67,13 +67,13 @@ public class MemcachedConfig extends CachingConfigurerSupport {
         cacheFactory.setCacheName("defaultCache");
         cacheFactory.setCacheClientFactory(new MemcacheClientFactoryImpl());
 
-        String server = SERVER;
-        if (StringUtils.isEmpty(server)) {
-            server = environment.getProperty("cache.server");
+        String cacheServers = CACHE_SERVERS;
+        if (StringUtils.isEmpty(cacheServers)) {
+            cacheServers = environment.getProperty("cache.servers");
         }
 
         CacheConfiguration cacheConfiguration = createCacheConfiguration();
-        cacheFactory.setAddressProvider(new DefaultAddressProvider(server));
+        cacheFactory.setAddressProvider(new DefaultAddressProvider(cacheServers));
         cacheFactory.setConfiguration(cacheConfiguration);
 
         return cacheFactory;
