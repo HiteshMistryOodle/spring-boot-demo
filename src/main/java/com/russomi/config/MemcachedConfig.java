@@ -9,6 +9,9 @@ import com.google.code.ssm.providers.elasticache.ElastiCacheConfiguration;
 import com.google.code.ssm.providers.elasticache.MemcacheClientFactoryImpl;
 import com.google.code.ssm.spring.SSMCache;
 import com.google.code.ssm.spring.SSMCacheManager;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.CacheManager;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
@@ -28,6 +31,7 @@ import java.util.Set;
 @Configuration
 public class MemcachedConfig extends CachingConfigurerSupport {
     private static final String CACHE_SERVERS = System.getenv("CACHE_SERVERS");
+    private static final Logger logger = LoggerFactory.getLogger(MemcachedConfig.class);
 
     @Autowired
     private Environment environment;
@@ -68,9 +72,11 @@ public class MemcachedConfig extends CachingConfigurerSupport {
         cacheFactory.setCacheClientFactory(new MemcacheClientFactoryImpl());
 
         String cacheServers = CACHE_SERVERS;
+        logger.debug("Env: CACHE_SERVERS='{}'", cacheServers);
         if (StringUtils.isEmpty(cacheServers)) {
             cacheServers = environment.getProperty("cache.servers");
         }
+        logger.debug("cacheServers='{}'", cacheServers);
 
         CacheConfiguration cacheConfiguration = createCacheConfiguration();
         cacheFactory.setAddressProvider(new DefaultAddressProvider(cacheServers));
