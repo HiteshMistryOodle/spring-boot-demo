@@ -2,10 +2,12 @@
 
 A simple spring boot rest api that uses memcached for caching and supports Elasticache (memcached) on AWS.
 
-[ ] Todo 1
-[ ] Todo 1
-[ ] Todo 1
-[ ] Todo 1
+- [x] Integrate simple-spring-memcached using aws-elasticache-provider
+- [ ] Deploy to ElasticBeanstalk and test against elasticache cluster 
+- [ ] Identify an interesting sample data set
+- [ ] Integrate with MySQL and RDS
+- [ ] Use [eb-locustio-sample](https://github.com/awslabs/eb-locustio-sample) to load test
+- [ ] Finish README.md
 
 ## Getting Started
 
