@@ -1,6 +1,11 @@
 # spring-boot-demo
 
-A simple spring boot rest api that uses memcached for caching.
+A simple spring boot rest api that uses memcached for caching and supports Elasticache (memcached) on AWS.
+
+[ ] Todo 1
+[ ] Todo 1
+[ ] Todo 1
+[ ] Todo 1
 
 ## Getting Started
 
@@ -88,3 +93,4 @@ This project is licensed under the Apache License - see the [LICENSE.md](LICENSE
 * Inspiration
 * etc
 * [spring-boot-samples](https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples)
+* [eb-locustio-sample](https://github.com/awslabs/eb-locustio-sample)
