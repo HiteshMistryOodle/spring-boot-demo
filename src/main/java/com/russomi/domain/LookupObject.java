@@ -27,6 +27,9 @@ public class LookupObject implements Serializable {
         this.description = description;
     }
 
+    public LookupObject() {
+    }
+
     public String getName() {
         return this.name;
     }
