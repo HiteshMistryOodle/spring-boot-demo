@@ -6,6 +6,8 @@ A simple spring boot rest api that uses memcached for caching and supports Elast
 - [x] Deploy to ElasticBeanstalk and test against elasticache cluster 
 - [ ] Identify an interesting sample data set
 - [ ] Integrate with MySQL and RDS
+- [ ] Create public/private subnets in new VPC across AZs - 2 subnets x 3 AZ = 6 subnets
+- [ ] Diagram VPC
 - [ ] Use [eb-locustio-sample](https://github.com/awslabs/eb-locustio-sample) to load test
 - [ ] Finish README.md
 
