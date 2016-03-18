@@ -11,6 +11,19 @@ A simple spring boot rest api that uses memcached for caching and supports Elast
 - [ ] Use [eb-locustio-sample](https://github.com/awslabs/eb-locustio-sample) to load test
 - [ ] Finish README.md
 
+## Documentation
+- http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/vpc-basic.html#vpc-basic-create
+- [Using Elastic Beanstalk with Amazon VPC - Load-balancing, autoscaling environments](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/vpc.html#d0e41851)
+    > To enable communication between the private subnet, and the public subnet and the 
+    > Internet beyond the public subnet, create routing rules that do the following:
+    >  
+    >   - Route all inbound traffic to your Amazon EC2 instances through the load balancer.
+    >   - Route all outbound traffic from your Amazon EC2 instances through the NAT device.
+    >
+
+
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
